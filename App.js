@@ -1,27 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import reactDom from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Image } from 'react-native';
 import Home from './Components/Home/Home';
 import { colors } from './theme/colors';
 import { spacing } from './theme/spacing';
 
 
+
 export default function App() {
   return (
-    <View>
+    
     <View style={styles.container}>
-      <Image
-        
-        source={require('./assets/Box.svg')}
-      />
-      <Text>Hello</Text>
-      <StatusBar style="auto" />
-      <View>
-      <Home/>
-      </View>
-
+      <View style={styles.menu}><Image source={require('./assets/native-logo.svg')}  style={{ width: 100, height: 100 }}/></View>
+              
+          <View >
+          <Home />
+          </View>
+          <StatusBar style="auto" />
     </View>
-    </View>
+    
   );
 }
 
@@ -31,8 +28,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.mainBackground,
     alignItems: 'center',
     justifyContent: 'center',
-   
-    // borderWidth:10,
+  },
+  menu:{
+flex:1,
+alignItems: 'start',
+justifyContent: 'start',
   },
   text:{
     color: colors.paraColor,
